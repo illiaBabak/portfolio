@@ -2,6 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --color-border: #7c3aed;
+}
+
+//swtich color in dark mode
+.dark {
+  --color-border: #c4b5fd;
+}
+
+body.dark * {
+  border-color: var(--color-border);
+}
+
+@theme {
+  --animate-typing: typing 3s steps(44, end),
+    blink-caret 0.75s step-end infinite;
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 14ch;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--color-border);
+    }
+  }
+}
+
 body,
 html {
   margin: 0;

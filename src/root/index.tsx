@@ -1,6 +1,7 @@
 import { JSX, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Header } from 'src/components/Header';
+import { Home } from 'src/components/Home';
 import { getCurrentTheme } from 'src/utils/getCurrentTheme';
 
 export const App = (): JSX.Element => {
@@ -12,6 +13,7 @@ export const App = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Header />
+      <Home />
     </BrowserRouter>
   );
 };

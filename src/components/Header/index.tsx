@@ -1,11 +1,13 @@
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SECTIONS } from 'src/utils/constants';
 import { getCurrentTheme } from 'src/utils/getCurrentTheme';
 
 export const Header = (): JSX.Element => {
+  const [theme, setTheme] = useState(getCurrentTheme());
+
   const [searchParams, setSearchParams] = useSearchParams();
-  const [theme, setTheme] = useState<'light' | 'dark'>(getCurrentTheme());
+
   const [isOpenedMenu, setIsOpenedMenu] = useState(false);
 
   const currentSection = searchParams.get('section');
@@ -31,7 +33,7 @@ export const Header = (): JSX.Element => {
   };
 
   return (
-    <header className='fixed flex h-[80px] w-full items-center justify-between bg-white px-3 shadow-md md:px-8 dark:bg-purple-900'>
+    <header className='sticky top-0 flex h-[80px] w-full items-center justify-between bg-white px-3 shadow-md md:px-8 dark:bg-zinc-900'>
       <h1 className='text-xl text-black dark:text-white'>Illia Babak</h1>
 
       <div className='flex w-[90px] flex-row items-center md:w-auto'>
@@ -39,7 +41,7 @@ export const Header = (): JSX.Element => {
           {SECTIONS.map((section, index) => (
             <button
               onClick={() => setSearchParams({ section })}
-              className={`${currentSection === section ? 'bg-purple-700 text-white outline -outline-offset-1 outline-black/10' : ''} mx-5 w-[100px] cursor-pointer rounded-md p-2 hover:bg-purple-700 hover:text-white dark:text-white`}
+              className={`${currentSection === section ? 'bg-purple-700 text-white outline -outline-offset-1 outline-black/10 dark:bg-zinc-700' : ''} dark:hover:bg-stale-500 mx-5 w-[100px] cursor-pointer rounded-md p-2 hover:bg-purple-700 hover:text-white dark:text-white dark:hover:bg-zinc-700`}
               key={`section-${section}-${index}`}
             >
               {section}
@@ -56,7 +58,7 @@ export const Header = (): JSX.Element => {
 
         <div className='mx-4 flex h-[40px] w-[40px] cursor-pointer items-center justify-center md:hidden'>
           <button
-            className='relative h-[40px] w-[40px] cursor-pointer rounded-md bg-white text-gray-500 focus:outline-none dark:bg-purple-700 dark:text-white'
+            className='relative h-[40px] w-[40px] cursor-pointer rounded-md bg-white text-gray-500 focus:outline-none dark:bg-zinc-700 dark:text-white'
             onClick={() => setIsOpenedMenu((prev) => !prev)}
           >
             <div className='absolute top-1/2 left-1/2 block w-5 -translate-x-1/2 -translate-y-1/2 transform cursor-pointer'>
@@ -81,14 +83,14 @@ export const Header = (): JSX.Element => {
       </div>
 
       {isOpenedMenu && (
-        <div className='fixed top-[80px] right-0 m-4 flex flex-col rounded-md bg-white py-2 shadow-md md:hidden dark:bg-purple-700'>
+        <div className='fixed top-[80px] right-0 m-4 flex flex-col rounded-md bg-white py-2 shadow-md md:hidden dark:bg-zinc-900'>
           {SECTIONS.map((section, index) => (
             <button
               onClick={() => {
                 setSearchParams({ section });
                 setIsOpenedMenu(false);
               }}
-              className={`${currentSection === section ? 'bg-purple-700 text-white outline -outline-offset-1 outline-black/10' : ''} mx-5 my-2 w-[100px] cursor-pointer rounded-md p-2 text-black hover:bg-purple-700 hover:text-white dark:text-white`}
+              className={`${currentSection === section ? 'bg-purple-700 text-white outline -outline-offset-1 outline-black/10 dark:bg-zinc-700' : ''} mx-5 my-2 w-[100px] cursor-pointer rounded-md p-2 text-black hover:bg-purple-700 hover:text-white dark:text-white dark:hover:bg-zinc-700`}
               key={`section-${section}-${index}`}
             >
               {section}
