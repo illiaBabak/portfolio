@@ -3,7 +3,7 @@ import { JSX } from 'react';
 export const Home = (): JSX.Element => {
   return (
     <section
-      className={`flex h-screen flex-col-reverse items-center justify-center bg-violet-100 bg-[url(/light-home.jpg)] bg-cover px-12 md:flex-row md:justify-between lg:px-24 dark:bg-[url(https://img.freepik.com/free-vector/black-green-geometric-background-vector-design_677411-3105.jpg?t=st=1737847031~exp=1737850631~hmac=cf28c39538e887b95a79b1a1efce9131f8e292d90181ff5d396413b913ca602d&w=1800)]`}
+      className={`flex h-screen flex-col-reverse items-center justify-center bg-[url(/light-home.jpg)] bg-cover px-12 md:flex-row md:justify-between lg:px-24 dark:bg-[url(/dark-home.jpg)]`}
     >
       <article className='mb-[15%] flex w-[70%] flex-col items-center text-center md:items-baseline md:text-left'>
         <h1 className='w-fit text-2xl font-bold md:text-4xl xl:text-6xl dark:text-white'>
