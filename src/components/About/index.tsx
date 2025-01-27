@@ -3,7 +3,7 @@ import { STACK } from 'src/utils/constants';
 
 export const About = (): JSX.Element => {
   return (
-    <section className='About flex h-screen flex-col items-center pt-16 dark:bg-neutral-950'>
+    <section className='About flex min-h-screen flex-col items-center pt-16 dark:bg-neutral-950'>
       <h1 className='mt-8 text-4xl font-bold text-black md:mt-12 md:text-5xl dark:text-white'>
         About me
       </h1>
