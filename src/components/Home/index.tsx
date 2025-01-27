@@ -3,7 +3,7 @@ import { JSX } from 'react';
 export const Home = (): JSX.Element => {
   return (
     <section
-      className={`flex h-screen flex-col-reverse items-center justify-center bg-[url(/light-home.jpg)] bg-cover px-12 md:flex-row md:justify-between lg:px-24 dark:bg-[url(/dark-home.jpg)]`}
+      className={`Home flex h-screen flex-col-reverse items-center justify-center bg-[url(/light-home.jpg)] bg-cover px-12 pt-[80px] md:flex-row md:justify-between lg:px-24 dark:bg-[url(/dark-home.jpg)]`}
     >
       <article className='mb-[15%] flex w-[70%] flex-col items-center text-center md:items-baseline md:text-left'>
         <h1 className='w-fit text-2xl font-bold md:text-4xl xl:text-6xl dark:text-white'>
@@ -12,7 +12,7 @@ export const Home = (): JSX.Element => {
         <p className='animate-typing w-fit overflow-hidden border-r-5 text-2xl font-bold whitespace-nowrap text-violet-600 md:text-4xl xl:text-6xl dark:text-violet-300'>
           Frontend Developer
         </p>
-        <p className='mt-5 w-[70%] text-xs sm:text-base lg:text-lg dark:text-white'>
+        <p className='mt-5 w-full text-xs sm:text-base md:w-[70%] lg:text-lg dark:text-white'>
           I'm Illia Babak, eighteen-year-old student from Ukraine studying in
           Poland. I'm a passionate Frontend Developer, specialised development
           using React and TypeScript
@@ -31,12 +31,6 @@ export const Home = (): JSX.Element => {
               src='/linkedin.png'
               alt='linkedin-icon'
             />
-          </a>
-          <a
-            className='h-[35px] w-[35px]'
-            href='https://www.instagram.com/dz1to4kaaa'
-          >
-            <img className='rounded-3xl' src='/insta.png' alt='insta-icon' />
           </a>
         </div>
       </article>

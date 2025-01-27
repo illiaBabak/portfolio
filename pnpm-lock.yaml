@@ -20,6 +20,9 @@ importers:
       react-router-dom:
         specifier: ^7.1.3
         version: 7.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-scroll:
+        specifier: ^1.9.0
+        version: 1.9.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       vite-plugin-checker:
         specifier: ^0.8.0
         version: 0.8.0(eslint@9.18.0(jiti@2.4.2))(optionator@0.9.4)(typescript@5.6.3)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
@@ -36,6 +39,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.3
         version: 19.0.3(@types/react@19.0.8)
+      '@types/react-scroll':
+        specifier: ^1.8.10
+        version: 1.8.10
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
@@ -614,6 +620,9 @@ packages:
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
       '@types/react': ^19.0.0
+
+  '@types/react-scroll@1.8.10':
+    resolution: {integrity: sha512-RD4Z7grbdNGOKwKnUBKar6zNxqaW3n8m9QSrfvljW+gmkj1GArb8AFBomVr6xMOgHPD3v1uV3BrIf01py57daQ==}
 
   '@types/react@19.0.8':
     resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
@@ -1374,6 +1383,9 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
+  lodash.throttle@4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -1605,6 +1617,12 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+
+  react-scroll@1.9.0:
+    resolution: {integrity: sha512-mamNcaX9Ng+JeSbBu97nWwRhYvL2oba+xR2GxvyXsbDeGP+gkYIKZ+aDMMj/n20TbV9SCWm/H7nyuNTSiXA6yA==}
+    peerDependencies:
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
   react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
@@ -2547,6 +2565,10 @@ snapshots:
     dependencies:
       '@types/react': 19.0.8
 
+  '@types/react-scroll@1.8.10':
+    dependencies:
+      '@types/react': 19.0.8
+
   '@types/react@19.0.8':
     dependencies:
       csstype: 3.1.3
@@ -3486,6 +3508,8 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
+  lodash.throttle@4.1.1: {}
+
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -3650,6 +3674,13 @@ snapshots:
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
     optionalDependencies:
+      react-dom: 19.0.0(react@19.0.0)
+
+  react-scroll@1.9.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      lodash.throttle: 4.1.1
+      prop-types: 15.8.1
+      react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
   react@19.0.0: {}
