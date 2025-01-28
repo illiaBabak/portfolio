@@ -4,15 +4,29 @@
 
 :root {
   --color-border: #7c3aed;
+  --track-scrollbar: #f1f1f1;
 }
 
 //swtich color in dark mode
 .dark {
   --color-border: #c4b5fd;
+  --track-scrollbar: #252525;
 }
 
 body.dark * {
   border-color: var(--color-border);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-scrollbar);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
 }
 
 @theme {

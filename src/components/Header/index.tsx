@@ -24,7 +24,7 @@ export const Header = (): JSX.Element => {
   };
 
   return (
-    <header className='fixed top-0 flex h-[80px] w-full items-center justify-between bg-white px-3 shadow-md md:px-8 dark:bg-zinc-900'>
+    <header className='fixed top-0 z-20 flex h-[80px] w-full items-center justify-between bg-white px-3 shadow-md md:px-8 dark:bg-zinc-900'>
       <h1 className='text-xl text-black dark:text-white'>Illia Babak</h1>
 
       <div className='flex w-[90px] flex-row items-center md:w-auto'>

@@ -9,10 +9,10 @@ export const About = (): JSX.Element => {
       </h1>
 
       <div className='mt-12 flex w-[80%] flex-col items-center md:items-start'>
-        <h2 className='text-2xl font-semibold text-violet-500 dark:text-violet-400'>
+        <h2 className='text-2xl font-semibold text-violet-600 dark:text-violet-500'>
           A little bit about me
         </h2>
-        <p className='mt-3 text-center text-gray-500 md:text-base'>
+        <p className='mt-3 text-center text-gray-500 md:text-left'>
           My name is Illia Babak. I am an 18-year-old front-end developer from
           Ukraine but currently studying in Poland to become a technical
           programmer at the School of Electronic and Automotive in Zielona Gora.

@@ -14,7 +14,7 @@ export const Contact = (): JSX.Element => {
               href='https://github.com/illiaBabak'
             >
               <img
-                className='rounded-3xl'
+                className='rounded-3xl duration-300 hover:scale-125'
                 src='/github.webp'
                 alt='github-icon'
               />
@@ -28,7 +28,7 @@ export const Contact = (): JSX.Element => {
               href='https://www.linkedin.com/in/illia-babak-4a8664289/'
             >
               <img
-                className='rounded-3xl'
+                className='rounded-3xl duration-300 hover:scale-125'
                 src='/linkedin.png'
                 alt='linkedin-icon'
               />

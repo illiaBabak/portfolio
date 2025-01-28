@@ -30,3 +30,33 @@ export const STACK: StackType[] = [
   { name: 'Linux', url: '/linux.png' },
   { name: 'MacOS', url: '/macos.png' },
 ] as const;
+
+export const PROJECTS = [
+  {
+    name: 'Blog',
+    img: '/blog.png',
+    description:
+      'Blog project with users, posts, comments and etc. This web application is written to learn how to work with Supabase',
+    githubLink: 'https://github.com/illiaBabak/blog',
+    link: 'https://blog-illiababaks-projects.vercel.app',
+    stack: ['REACT.JS', 'REACT QUERY', 'SUPABASE', 'REACT BOOTSTRAP'],
+  },
+  {
+    name: 'Music Player',
+    img: '/spotify.png',
+    description:
+      'Web application for listening to music. This project written to sum up my experience in technology and create something with a real full functionality Web API',
+    githubLink: 'https://github.com/illiaBabak/Music-player',
+    link: 'https://music-player-hc8h.vercel.app',
+    stack: ['REACT.JS', 'REACT QUERY', 'REACT BOOTSTRAP', 'TYPESCRIPT'],
+  },
+  {
+    name: 'Movies',
+    img: '/movies.png',
+    description:
+      'Film library using the Movies API. This web application is written to learn how to work with TMDB Api and how to work deeply with React Query, Less',
+    githubLink: 'https://github.com/illiaBabak/Movies',
+    link: 'https://illiababak.github.io/Movies/',
+    stack: ['REACT.JS', 'REACT QUERY', 'LESS', 'TYPESCRIPT'],
+  },
+] as const;

@@ -3,7 +3,7 @@ import { JSX } from 'react';
 export const Home = (): JSX.Element => {
   return (
     <section
-      className={`Home flex h-screen flex-col-reverse items-center justify-center bg-[url(/light-home.jpg)] bg-cover px-12 pt-[80px] md:flex-row md:justify-between lg:px-24 dark:bg-[url(/dark-home.jpg)]`}
+      className={`Home flex h-screen flex-col-reverse items-center justify-center bg-[url(/light-home.jpg)] bg-cover px-12 pt-[120px] md:flex-row md:justify-between lg:px-24 dark:bg-[url(/dark-home.jpg)]`}
     >
       <article className='mb-[15%] flex w-[70%] flex-col items-center text-center md:items-baseline md:text-left'>
         <h1 className='w-fit text-2xl font-bold md:text-4xl xl:text-6xl dark:text-white'>
