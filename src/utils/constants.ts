@@ -18,6 +18,8 @@ export const STACK: StackType[] = [
   { name: 'Redux', url: '/redux.png' },
   { name: 'React Query', url: '/react-query.png' },
   { name: 'React Bootstrap', url: '/react-bootstrap.jpeg' },
+  { name: 'PHP', url: '/php.png' },
+  { name: 'Python', url: '/python.png' },
   { name: 'NPM', url: '/npm.webp' },
   { name: 'PNPM', url: '/pnpm.webp' },
   { name: 'Yarn', url: '/yarn.webp' },
