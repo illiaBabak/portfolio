@@ -9,8 +9,11 @@ import { getCurrentTheme } from 'src/utils/getCurrentTheme';
 export const App = (): JSX.Element => {
   // set theme
   useEffect(() => {
+    const img = new Image();
+    img.src = '/dark-home.jpg';
+
     document.documentElement.classList.add(getCurrentTheme());
-  });
+  }, []);
 
   return (
     <>
