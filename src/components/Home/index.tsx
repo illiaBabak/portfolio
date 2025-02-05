@@ -13,9 +13,7 @@ export const Home = (): JSX.Element => {
           Frontend Developer
         </p>
         <p className='mt-5 w-full text-xs sm:text-base md:w-[70%] lg:text-lg dark:text-white'>
-          I'm Illia Babak, eighteen-year-old student from Ukraine studying in
-          Poland. I'm a passionate Frontend Developer, specialised development
-          using React and TypeScript
+          an eighteen-year-old student from Ukraine studying in Poland
         </p>
 
         <div className='mt-5 flex flex-row items-center'>
