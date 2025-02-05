@@ -17,7 +17,7 @@ export const About = (): JSX.Element => {
           Ukraine but currently studying in Poland to become a technical
           programmer at the School of Electronic and Automotive in Zielona Gora.
           I have just started my journey in web development and am gaining
-          experience from self-studying programming, creating pet projects and,
+          experience from self-studying programming, creating pet projects, and
           more recently, freelancing with orders
         </p>
       </div>
