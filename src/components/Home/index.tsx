@@ -12,8 +12,8 @@ export const Home = (): JSX.Element => {
         <p className='animate-typing w-fit overflow-hidden border-r-5 text-2xl font-bold whitespace-nowrap text-violet-600 md:text-4xl xl:text-6xl dark:text-violet-300'>
           Frontend Developer
         </p>
-        <p className='mt-5 w-full text-xs sm:text-base md:w-[70%] lg:text-lg dark:text-white'>
-          an eighteen-year-old student from Ukraine studying in Poland
+        <p className='mt-4 w-full text-xs sm:text-base md:w-[60%] lg:text-lg dark:text-white'>
+          an eighteen-year-old developer studying in Poland
         </p>
 
         <div className='mt-5 flex flex-row items-center'>

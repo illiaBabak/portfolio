@@ -10,7 +10,7 @@ export const Contact = (): JSX.Element => {
         <div className='flex w-full flex-col items-center text-center md:text-base dark:text-white'>
           <div className='my-4 mt-10 flex flex-row items-center'>
             <a
-              className='flex h-[32px] w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
+              className='flex h-[32px] max-w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
               href='https://github.com/illiaBabak'
             >
               <img
@@ -25,7 +25,7 @@ export const Contact = (): JSX.Element => {
 
           <div className='my-4 flex flex-row items-center'>
             <a
-              className='flex h-[32px] w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
+              className='flex h-[32px] max-w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
               href='https://www.linkedin.com/in/illia-babak-4a8664289/'
             >
               <img
