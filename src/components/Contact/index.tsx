@@ -10,30 +10,32 @@ export const Contact = (): JSX.Element => {
         <div className='flex w-full flex-col items-center text-center md:text-base dark:text-white'>
           <div className='my-4 mt-10 flex flex-row items-center'>
             <a
-              className='h-[32px] w-[32px] md:h-[45px] md:w-[45px]'
+              className='flex h-[32px] w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
               href='https://github.com/illiaBabak'
             >
               <img
-                className='rounded-3xl duration-300 hover:scale-125'
+                className='h-[32px] rounded-3xl md:h-[45px]'
                 src='/github.webp'
                 alt='github-icon'
               />
+
+              <p className='ms-2 text-xl'>My Github</p>
             </a>
-            <p className='ms-2 text-xl'>My Github</p>
           </div>
 
           <div className='my-4 flex flex-row items-center'>
             <a
-              className='h-[32px] w-[32px] md:h-[45px] md:w-[45px]'
+              className='flex h-[32px] w-[180px] flex-row items-center duration-300 hover:scale-125 md:h-[45px]'
               href='https://www.linkedin.com/in/illia-babak-4a8664289/'
             >
               <img
-                className='rounded-3xl duration-300 hover:scale-125'
+                className='h-[32px] rounded-3xl md:h-[45px]'
                 src='/linkedin.png'
                 alt='linkedin-icon'
               />
+
+              <p className='ms-2 text-xl'>My Linkedin</p>
             </a>
-            <p className='ms-2 text-xl'>My Linkedin</p>
           </div>
 
           <p className='mt-4 flex flex-col text-lg md:flex-row'>

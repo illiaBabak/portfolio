@@ -13,7 +13,7 @@ export const About = (): JSX.Element => {
           A little bit about me
         </h2>
         <p className='mt-3 text-center text-gray-500 md:text-left'>
-          My name is Illia Babak. I am an 18-year-old front-end developer from
+          My name is Illia Babak, an 18-year-old front-end developer from
           Ukraine but currently studying in Poland to become a technical
           programmer at the School of Electronic and Automotive in Zielona Gora.
           I have just started my journey in web development and am gaining

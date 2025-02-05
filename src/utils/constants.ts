@@ -56,7 +56,7 @@ export const PROJECTS = [
     name: 'Movies',
     img: '/movies.png',
     description:
-      'Film library using the Movies API. This web application is written to learn how to work with TMDB Api and how to work deeply with React Query, Less',
+      'Film library using the Movies API. This web application is written to learn how to work with TMDB API and how to work deeply with React Query, Less',
     githubLink: 'https://github.com/illiaBabak/Movies',
     link: 'https://illiababak.github.io/Movies/',
     stack: ['REACT.JS', 'REACT QUERY', 'LESS', 'TYPESCRIPT'],
