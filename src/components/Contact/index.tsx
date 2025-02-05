@@ -38,12 +38,18 @@ export const Contact = (): JSX.Element => {
             </a>
           </div>
 
-          <p className='mt-4 flex flex-col text-lg md:flex-row'>
+          <a
+            href='mailto:illiababak776@gmail.com'
+            className='mt-4 flex flex-col text-lg md:flex-row'
+          >
             <strong className='me-2'>My email:</strong> illiababak776@gmail.com
-          </p>
-          <p className='mt-4 flex flex-col text-lg md:flex-row'>
+          </a>
+          <a
+            href='tel:+48884959918'
+            className='mt-4 flex flex-col text-lg md:flex-row'
+          >
             <strong className='me-2'>My phone:</strong> +48 884 959 918
-          </p>
+          </a>
         </div>
       </div>
     </section>
