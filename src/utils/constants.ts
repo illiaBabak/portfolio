@@ -31,6 +31,8 @@ export const STACK: StackType[] = [
   { name: 'Windows', url: '/windows.png' },
   { name: 'Linux', url: '/linux.png' },
   { name: 'MacOS', url: '/macos.png' },
+  { name: 'Firebase', url: '/firebase.png' },
+  { name: 'Cypress', url: '/cypress.png' },
 ] as const;
 
 export const PROJECTS = [
