@@ -11,13 +11,14 @@ export const STACK: StackType[] = [
   { name: 'SCSS', url: '/scss.png' },
   { name: 'Less', url: '/less.webp' },
   { name: 'Bootstrap', url: '/bootstrap.svg' },
+  { name: 'React Bootstrap', url: '/react-bootstrap.jpeg' },
   { name: 'Tailwind', url: '/tailwind.svg' },
   { name: 'JavaScript', url: '/js.webp' },
   { name: 'TypeScript', url: '/ts.png' },
   { name: 'React', url: '/react.png' },
   { name: 'Redux', url: '/redux.png' },
   { name: 'React Query', url: '/react-query.png' },
-  { name: 'React Bootstrap', url: '/react-bootstrap.jpeg' },
+  { name: 'Cypress', url: '/cypress.png' },
   { name: 'PHP', url: '/php.png' },
   { name: 'Python', url: '/python.png' },
   { name: 'NPM', url: '/npm.webp' },
@@ -25,17 +26,25 @@ export const STACK: StackType[] = [
   { name: 'Yarn', url: '/yarn.webp' },
   { name: 'Axios', url: '/axios.png' },
   { name: 'Git', url: '/git.png' },
+  { name: 'Firebase', url: '/firebase.png' },
   { name: 'Supabase', url: '/supabase.png' },
   { name: 'PostgreSQL', url: '/postgresql.webp' },
   { name: 'MySQL', url: '/mysql.avif' },
   { name: 'Windows', url: '/windows.png' },
   { name: 'Linux', url: '/linux.png' },
   { name: 'MacOS', url: '/macos.png' },
-  { name: 'Firebase', url: '/firebase.png' },
-  { name: 'Cypress', url: '/cypress.png' },
 ] as const;
 
 export const PROJECTS = [
+  {
+    name: 'Fit Form',
+    img: '/fit-form.png',
+    description:
+      'Fit Form is a modern web application for exploring exercises and creating personalized workout plans. Plan your training easily and efficiently right in your browser! 💪🌐',
+    githubLink: 'https://github.com/illiaBabak/fit-form',
+    link: 'https://github.com/illiaBabak/fit-form',
+    stack: ['REACT.JS', 'RTK', 'FIREBASE', 'TAILWIND', 'CYPRESS'],
+  },
   {
     name: 'Blog',
     img: '/blog.png',
