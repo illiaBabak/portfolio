@@ -32,7 +32,7 @@ export const About = (): JSX.Element => {
         {STACK.map((tech, index) => (
           <div
             key={`tech-${tech.name}-${index}`}
-            className='m-2 flex flex-row items-center rounded-md bg-white px-4 py-3 shadow-xl md:m-3'
+            className='m-2 flex flex-row items-center rounded-sm bg-white px-4 py-3 shadow-xl md:m-3'
           >
             <img
               className='h-[32px] min-w-[32px] md:h-[40px] md:min-w-[40px]'

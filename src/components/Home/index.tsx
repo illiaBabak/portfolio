@@ -10,7 +10,7 @@ export const Home = (): JSX.Element => {
           Hey, I'm Illia
         </h1>
         <p className='animate-typing w-fit overflow-hidden border-r-5 text-2xl font-bold whitespace-nowrap text-violet-600 md:text-4xl xl:text-6xl dark:text-violet-300'>
-          Frontend Developer
+          Fullstack Developer
         </p>
         <p className='mt-4 w-full text-xs sm:text-base md:w-[60%] lg:text-lg dark:text-white'></p>
 
