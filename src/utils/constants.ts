@@ -16,6 +16,7 @@ export const STACK: StackType[] = [
   { name: 'JavaScript', url: '/js.webp' },
   { name: 'TypeScript', url: '/ts.png' },
   { name: 'React', url: '/react.png' },
+  { name: 'Next.js', url: '/nextjs.png' },
   { name: 'Redux', url: '/redux.png' },
   { name: 'React Query', url: '/react-query.png' },
   { name: 'React Native', url: '/react.png' },
