@@ -48,7 +48,11 @@ export const Header = (): JSX.Element => {
           onClick={toggleTheme}
           className='h-[30px] cursor-pointer object-cover duration-150 hover:scale-110'
           src={theme === 'light' ? '/sun.png' : '/moon.png'}
-          alt='icon'
+          alt={
+            theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+          }
+          loading='eager'
+          decoding='async'
         />
 
         <div className='mx-4 flex h-[40px] w-[40px] cursor-pointer items-center justify-center md:hidden'>

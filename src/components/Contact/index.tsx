@@ -2,7 +2,10 @@ import { JSX } from 'react';
 
 export const Contact = (): JSX.Element => {
   return (
-    <section className='Contact flex h-screen w-full flex-col items-center justify-center px-16 dark:bg-neutral-950'>
+    <section
+      id='Contact'
+      className='Contact flex h-screen w-full flex-col items-center justify-center px-16 dark:bg-neutral-950'
+    >
       <h1 className='text-3xl font-bold md:text-5xl dark:text-white'>
         Contact me
       </h1>
@@ -16,7 +19,9 @@ export const Contact = (): JSX.Element => {
               <img
                 className='h-[32px] rounded-3xl md:h-[45px]'
                 src='/github.webp'
-                alt='github-icon'
+                alt='GitHub icon'
+                loading='lazy'
+                decoding='async'
               />
 
               <p className='ms-2 text-xl'>My Github</p>
@@ -31,7 +36,9 @@ export const Contact = (): JSX.Element => {
               <img
                 className='h-[32px] rounded-3xl md:h-[45px]'
                 src='/linkedin.png'
-                alt='linkedin-icon'
+                alt='LinkedIn icon'
+                loading='lazy'
+                decoding='async'
               />
 
               <p className='ms-2 text-xl'>My Linkedin</p>

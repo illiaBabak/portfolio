@@ -3,7 +3,10 @@ import { STACK } from 'src/utils/constants';
 
 export const About = (): JSX.Element => {
   return (
-    <section className='About flex min-h-screen flex-col items-center pt-16 pb-6 sm:pb-2 dark:bg-neutral-950'>
+    <section
+      id='About'
+      className='About flex min-h-screen flex-col items-center pt-16 pb-6 sm:pb-2 dark:bg-neutral-950'
+    >
       <h1 className='mt-8 text-4xl font-bold text-black md:mt-12 md:text-5xl dark:text-white'>
         About me
       </h1>
@@ -37,7 +40,9 @@ export const About = (): JSX.Element => {
             <img
               className='h-[32px] min-w-[32px] md:h-[40px] md:min-w-[40px]'
               src={tech.url}
-              alt='tech-icon'
+              alt={`${tech.name} logo`}
+              loading='lazy'
+              decoding='async'
             />
             <h5 className='ms-3'>{tech.name}</h5>
           </div>

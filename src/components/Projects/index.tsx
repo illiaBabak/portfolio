@@ -3,7 +3,10 @@ import { PROJECTS } from 'src/utils/constants';
 
 export const Projects = (): JSX.Element => {
   return (
-    <section className='Projects flex min-h-screen flex-col items-center bg-violet-100 pt-24 pb-12 dark:bg-slate-950'>
+    <section
+      id='Projects'
+      className='Projects flex min-h-screen flex-col items-center bg-violet-100 pt-24 pb-12 dark:bg-slate-950'
+    >
       <h1 className='text-5xl font-bold dark:text-white'>My projects</h1>
       <div className='flex flex-col items-center'>
         {PROJECTS.map((project, index) => (
@@ -14,7 +17,9 @@ export const Projects = (): JSX.Element => {
             <img
               className='h-[150px] w-[300px] rounded-md sm:h-[200px] sm:w-[400px] xl:h-[300px] xl:min-w-[600px]'
               src={project.img}
-              alt='project-icon'
+              alt={`${project.name} preview`}
+              loading='lazy'
+              decoding='async'
             />
             <div
               className={`relative mt-4 justify-between md:mt-0 ${index % 2 == 0 ? 'ms-4' : 'me-4'} flex flex-col`}
@@ -43,7 +48,9 @@ export const Projects = (): JSX.Element => {
                 <img
                   className='absolute top-[-20px] right-[-12px] h-[30px] min-w-[30px] cursor-pointer rounded-4xl bg-white duration-300 hover:scale-125 sm:right-[-20px] sm:h-[40px] sm:min-w-[40px]'
                   src='/github.webp'
-                  alt='github-icon'
+                  alt='GitHub icon'
+                  loading='lazy'
+                  decoding='async'
                 />
               </a>
 
@@ -51,7 +58,9 @@ export const Projects = (): JSX.Element => {
                 <img
                   className='absolute top-[-22.5px] right-[30px] h-[35px] min-w-[35px] cursor-pointer rounded-4xl bg-white duration-300 hover:scale-125 sm:h-[45px] sm:min-w-[45px]'
                   src='/link.png'
-                  alt='link-icon'
+                  alt='External link icon'
+                  loading='lazy'
+                  decoding='async'
                 />
               </a>
             </div>
