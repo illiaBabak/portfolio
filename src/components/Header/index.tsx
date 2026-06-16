@@ -1,104 +1,142 @@
 import { JSX, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { SECTIONS } from 'src/utils/constants';
-import { getCurrentTheme } from 'src/utils/getCurrentTheme';
-import { Link } from 'react-scroll';
+import { navItems, personalInfo } from 'src/data/portfolio';
+
+const getNavLinkClass = (isActive: boolean) =>
+  `rounded-full px-4 py-2 text-sm font-semibold transition duration-300 hover:bg-slate-950/5 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
+    isActive ? 'bg-violet-600 text-white' : 'text-slate-600'
+  }`;
+
+const getMobileNavLinkClass = (isActive: boolean) =>
+  `rounded-xl px-4 py-3 text-sm font-semibold transition duration-300 hover:bg-slate-950/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 ${
+    isActive ? 'bg-violet-600 text-white' : 'text-slate-700'
+  }`;
 
 export const Header = (): JSX.Element => {
-  const [theme, setTheme] = useState(getCurrentTheme());
-
   const [isOpenedMenu, setIsOpenedMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState(navItems[0].id);
 
-  const toggleTheme = () => {
-    document.documentElement.classList.remove('light', 'dark');
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpenedMenu(false);
+    };
 
-    if (theme === 'light') {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('portfolio_theme', JSON.stringify('dark'));
-    } else {
-      setTheme('light');
-      document.documentElement.classList.add('light');
-      localStorage.setItem('portfolio_theme', JSON.stringify('light'));
-    }
-  };
+    window.addEventListener('keydown', handleEscape);
+
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+
+        if (visibleEntry?.target.id) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0,
+      }
+    );
+
+    navItems.forEach((item) => {
+      const section = document.getElementById(item.id);
+
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const closeMenu = () => setIsOpenedMenu(false);
 
   return (
-    <header className='fixed top-0 z-20 flex h-[80px] w-full items-center justify-between bg-white px-3 shadow-md md:px-8 dark:bg-zinc-900'>
-      <h1 className='text-xl text-black dark:text-white'>Illia Babak</h1>
+    <header className='fixed top-4 right-0 left-0 z-50 px-4'>
+      <nav
+        className='mx-auto flex h-16 max-w-6xl items-center justify-between rounded-2xl border border-slate-900/10 bg-white/80 px-4 shadow-2xl shadow-slate-950/10 backdrop-blur-xl sm:px-5'
+        aria-label='Primary navigation'
+      >
+        <a
+          href='#home'
+          className='group flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500'
+          onClick={closeMenu}
+        >
+          <span className='flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/10 bg-white text-sm font-black text-slate-950 shadow-sm shadow-slate-950/5 transition duration-300 group-hover:border-violet-400/50 group-hover:text-violet-700'>
+            IB
+          </span>
+          <span className='hidden flex-col leading-none sm:flex'>
+            <span className='font-bold text-slate-950'>
+              {personalInfo.name}
+            </span>
+            <span className='mt-1 text-xs text-slate-500'>
+              Developer portfolio
+            </span>
+          </span>
+        </a>
 
-      <div className='flex w-[90px] flex-row items-center md:w-auto'>
-        <div className='hidden md:flex'>
-          {SECTIONS.map((section, index) => (
-            <Link
-              to={section}
-              smooth={true}
-              duration={500}
-              offset={0}
-              spy={true}
-              className={`dark:hover:bg-stale-500 mx-5 w-[100px] cursor-pointer rounded-md p-2 text-center hover:bg-purple-700 hover:text-white dark:text-white dark:hover:bg-zinc-700 [&.active]:bg-purple-700 [&.active]:text-white [&.active]:outline [&.active]:outline-black/10 [&.active]:dark:bg-zinc-700`}
-              key={`section-${section}-${index}`}
+        <div className='hidden items-center gap-1 lg:flex'>
+          {navItems.map((item) => (
+            <a
+              href={`#${item.id}`}
+              className={getNavLinkClass(activeSection === item.id)}
+              aria-current={activeSection === item.id ? 'page' : undefined}
+              key={item.id}
             >
-              {section}
-            </Link>
+              {item.label}
+            </a>
           ))}
         </div>
 
-        <img
-          onClick={toggleTheme}
-          className='h-[30px] cursor-pointer object-cover duration-150 hover:scale-110'
-          src={theme === 'light' ? '/sun.png' : '/moon.png'}
-          alt={
-            theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
-          }
-          loading='eager'
-          decoding='async'
-        />
-
-        <div className='mx-4 flex h-[40px] w-[40px] cursor-pointer items-center justify-center md:hidden'>
+        <div className='flex items-center gap-2'>
           <button
-            className='relative h-[40px] w-[40px] cursor-pointer rounded-md bg-white text-gray-500 focus:outline-none dark:bg-zinc-700 dark:text-white'
+            className='relative flex h-10 w-10 items-center justify-center rounded-full border border-slate-900/10 bg-slate-950/5 text-slate-700 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 lg:hidden'
+            type='button'
+            aria-label={isOpenedMenu ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpenedMenu}
+            aria-controls='mobile-navigation'
             onClick={() => setIsOpenedMenu((prev) => !prev)}
           >
-            <div className='absolute top-1/2 left-1/2 block w-5 -translate-x-1/2 -translate-y-1/2 transform cursor-pointer'>
-              <span
-                className={`absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out ${
-                  isOpenedMenu ? 'rotate-45' : '-translate-y-1.5'
-                }`}
-              />
-              <span
-                className={`absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out ${
-                  isOpenedMenu ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out ${
-                  isOpenedMenu ? '-rotate-45' : 'translate-y-1.5'
-                }`}
-              />
-            </div>
+            <span className='sr-only'>
+              {isOpenedMenu ? 'Close menu' : 'Open menu'}
+            </span>
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition duration-300 ${
+                isOpenedMenu ? 'rotate-45' : '-translate-y-1.5'
+              }`}
+            />
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition duration-300 ${
+                isOpenedMenu ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition duration-300 ${
+                isOpenedMenu ? '-rotate-45' : 'translate-y-1.5'
+              }`}
+            />
           </button>
         </div>
-      </div>
+      </nav>
 
-      {isOpenedMenu && (
-        <div className='fixed top-[80px] right-0 m-4 flex flex-col rounded-md bg-white py-2 shadow-md md:hidden dark:bg-zinc-900'>
-          {SECTIONS.map((section, index) => (
-            <Link
-              to={section}
-              smooth={true}
-              duration={500}
-              offset={0}
-              spy={true}
-              onClick={() => setIsOpenedMenu(false)}
-              className={`mx-5 my-2 w-[100px] cursor-pointer rounded-md p-2 text-center text-black hover:bg-purple-700 hover:text-white dark:text-white dark:hover:bg-zinc-700 [&.active]:bg-purple-700 [&.active]:text-white [&.active]:outline [&.active]:outline-black/10 [&.active]:dark:bg-zinc-700`}
-              key={`section-${section}-${index}`}
+      {isOpenedMenu ? (
+        <div
+          id='mobile-navigation'
+          className='mx-auto mt-3 grid max-w-6xl gap-2 rounded-2xl border border-slate-900/10 bg-white/95 p-3 shadow-2xl shadow-slate-950/15 backdrop-blur-xl lg:hidden'
+        >
+          {navItems.map((item) => (
+            <a
+              href={`#${item.id}`}
+              onClick={closeMenu}
+              className={getMobileNavLinkClass(activeSection === item.id)}
+              aria-current={activeSection === item.id ? 'page' : undefined}
+              key={`mobile-${item.id}`}
             >
-              {section}
-            </Link>
+              {item.label}
+            </a>
           ))}
         </div>
-      )}
+      ) : null}
     </header>
   );
 };

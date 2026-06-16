@@ -1,40 +1,26 @@
-import { JSX, Suspense, lazy, useEffect } from 'react';
+import { JSX } from 'react';
+import { About } from 'src/components/About';
+import { Contact } from 'src/components/Contact';
+import { Experience } from 'src/components/Experience';
+import { Footer } from 'src/components/Footer';
 import { Header } from 'src/components/Header';
 import { Home } from 'src/components/Home';
-import { getCurrentTheme } from 'src/utils/getCurrentTheme';
-
-const About = lazy(() =>
-  import('src/components/About').then((m) => ({ default: m.About }))
-);
-const Projects = lazy(() =>
-  import('src/components/Projects').then((m) => ({ default: m.Projects }))
-);
-const Contact = lazy(() =>
-  import('src/components/Contact').then((m) => ({ default: m.Contact }))
-);
+import { Projects } from 'src/components/Projects';
+import { Skills } from 'src/components/Skills';
 
 export const App = (): JSX.Element => {
-  // set theme
-  useEffect(() => {
-    const img = new Image();
-    img.src = '/dark-home.jpg';
-
-    document.documentElement.classList.add(getCurrentTheme());
-  }, []);
-
   return (
-    <>
+    <div className='min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased'>
       <Header />
-      <Home />
-      <Suspense fallback={null}>
-        <About />
-      </Suspense>
-      <Suspense fallback={null}>
+      <main>
+        <Home />
+        <Skills />
+        <Experience />
         <Projects />
-      </Suspense>
-      <Suspense fallback={null}>
+        <About />
         <Contact />
-      </Suspense>
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 };
