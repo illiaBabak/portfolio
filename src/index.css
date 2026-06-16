@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   --color-border: rgba(15, 23, 42, 0.12);
@@ -42,7 +41,12 @@ a {
 }
 
 section {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 2rem;
+}
+
+main > section:not(#home) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
 
 ::selection {
@@ -92,24 +96,6 @@ section {
 
 .hero-portrait-frame {
   --portrait-frame-angle: 0deg;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(124, 58, 237, 0.92),
-      rgba(34, 211, 238, 0.84),
-      rgba(99, 102, 241, 0.88),
-      rgba(236, 72, 153, 0.64),
-      rgba(124, 58, 237, 0.92)
-    );
-}
-
-.hero-portrait-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 3px;
-  pointer-events: none;
   background: conic-gradient(
     from var(--portrait-frame-angle),
     rgba(124, 58, 237, 0.98),
@@ -118,14 +104,6 @@ section {
     rgba(99, 102, 241, 0.95),
     rgba(124, 58, 237, 0.98)
   );
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
   animation: portrait-gradient-border 3.8s linear infinite;
 }
 
@@ -182,20 +160,20 @@ section {
 
 @keyframes project-carousel-fade {
   0%,
-  20% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  25%,
-  95% {
-    transform: scale(1.015);
+  100% {
+    transform: scale(1.012);
     opacity: 0;
   }
 
-  100% {
-    transform: scale(1);
+  6%,
+  22% {
+    transform: scale(1.003);
     opacity: 1;
+  }
+
+  30% {
+    transform: scale(1.018);
+    opacity: 0;
   }
 }
 
@@ -215,7 +193,6 @@ section {
 
   .float-slow,
   .hero-portrait-frame,
-  .hero-portrait-frame::after,
   .project-preview-float,
   .project-phone-float,
   .project-carousel-image {

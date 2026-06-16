@@ -17,6 +17,8 @@ export const ProjectCard = ({
   index,
 }: ProjectCardProps): JSX.Element => {
   const isMobilePreview = project.previewVariant === 'mobile';
+  const carouselStepDuration = 4;
+  const carouselFadeLead = 0.8;
   const carouselDuration = project.images.length * 4;
   const layoutClass = isMobilePreview
     ? 'lg:grid-cols-[0.72fr_1fr]'
@@ -56,10 +58,14 @@ export const ProjectCard = ({
                         imageIndex === 0 ? 'opacity-100' : 'opacity-0'
                       }`}
                       style={{
-                        animationDelay: `${imageIndex * 4}s`,
+                        animationDelay: `${
+                          imageIndex * carouselStepDuration - carouselFadeLead
+                        }s`,
                         animationDuration: `${carouselDuration}s`,
                       }}
                       src={image}
+                      width={589}
+                      height={1280}
                       alt={
                         imageIndex === 0
                           ? `${project.title} mobile app preview`
@@ -93,10 +99,14 @@ export const ProjectCard = ({
                             imageIndex === 0 ? 'opacity-100' : 'opacity-0'
                           }`}
                           style={{
-                            animationDelay: `${imageIndex * 4}s`,
+                            animationDelay: `${
+                              imageIndex * carouselStepDuration - carouselFadeLead
+                            }s`,
                             animationDuration: `${carouselDuration}s`,
                           }}
                           src={image}
+                          width={1600}
+                          height={900}
                           alt={
                             imageIndex === 0
                               ? `${project.title} web app preview`
