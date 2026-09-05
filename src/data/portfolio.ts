@@ -13,12 +13,14 @@ export type SocialLink = {
 export type Skill = {
   name: string;
   icon?: string;
+  badgeUrl?: string;
 };
 
 export type SkillCategory = {
   title: string;
   description: string;
   skills: readonly Skill[];
+  wide?: boolean;
 };
 
 export type ProjectLink = {
@@ -102,60 +104,225 @@ export const socialLinks: readonly SocialLink[] = [
 
 export const skillCategories: readonly SkillCategory[] = [
   {
-    title: 'Frontend',
-    description: 'Interfaces, state, styling, and fast client-side workflows.',
+    title: 'Styling',
+    description:
+      'Responsive, maintainable interfaces with polished visual detail.',
     skills: [
-      { name: 'SCSS', icon: '/scss.webp' },
-      { name: 'Less', icon: '/less.webp' },
-      { name: 'Tailwind CSS', icon: '/tailwind.svg' },
-      { name: 'Bootstrap', icon: '/bootstrap.svg' },
-      { name: 'JavaScript', icon: '/js.webp' },
-      { name: 'TypeScript', icon: '/ts.webp' },
-      { name: 'React', icon: '/react.webp' },
-      { name: 'Next.js', icon: '/nextjs.webp' },
-      { name: 'Redux', icon: '/redux.webp' },
-      { name: 'React Query', icon: '/react-query.webp' },
-      {name: 'Babylon.js', icon: '/babylon.webp'}
+      {
+        name: 'Tailwind CSS',
+        badgeUrl:
+          'https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white',
+      },
+      {
+        name: 'Bootstrap',
+        badgeUrl:
+          'https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white',
+      },
+      {
+        name: 'Sass',
+        badgeUrl:
+          'https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white',
+      },
+      {
+        name: 'Less',
+        badgeUrl:
+          'https://img.shields.io/badge/Less-1D365D?style=for-the-badge&logo=less&logoColor=white',
+      },
+    ],
+  },
+  {
+    title: 'Frontend',
+    description:
+      'Modern web applications, state management, and 3D experiences.',
+    skills: [
+      {
+        name: 'JavaScript',
+        badgeUrl:
+          'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000',
+      },
+      {
+        name: 'TypeScript',
+        badgeUrl:
+          'https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white',
+      },
+      {
+        name: 'React',
+        badgeUrl:
+          'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000',
+      },
+      {
+        name: 'Next.js',
+        badgeUrl:
+          'https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=nextdotjs&logoColor=white',
+      },
+      {
+        name: 'Redux Toolkit',
+        badgeUrl:
+          'https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white',
+      },
+      {
+        name: 'TanStack Query',
+        badgeUrl:
+          'https://img.shields.io/badge/TanStack_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white',
+      },
+      {
+        name: 'Babylon.js',
+        badgeUrl:
+          'https://img.shields.io/badge/Babylon.js-BB464B?style=for-the-badge&logo=babylondotjs&logoColor=white',
+      },
+      {
+        name: 'Vite',
+        badgeUrl:
+          'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white',
+      },
+    ],
+  },
+  {
+    title: 'Mobile',
+    description: 'Cross-platform mobile products and native-feeling workflows.',
+    skills: [
+      {
+        name: 'React Native',
+        badgeUrl:
+          'https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=000',
+      },
+      {
+        name: 'Expo',
+        badgeUrl:
+          'https://img.shields.io/badge/Expo-000?style=for-the-badge&logo=expo&logoColor=white',
+      },
     ],
   },
   {
     title: 'Backend',
-    description: 'APIs, server logic, and practical application foundations.',
+    description: 'APIs, server logic, payments, and application foundations.',
     skills: [
-      { name: 'Node.js', icon: '/node.webp' },
-      { name: 'Express', icon: '/express.webp' },
-      { name: 'Prisma', icon: '/prisma.svg' },
-      { name: 'PHP', icon: '/php.webp' },
-    ],
-  },
-    {
-    title: 'Mobile',
-    description: 'Cross-platform product flows and app-ready integrations.',
-    skills: [
-      { name: 'React Native', icon: '/react.webp' },
-      { name: 'Expo', icon: '/expo.webp' },
+      {
+        name: 'Node.js',
+        badgeUrl:
+          'https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white',
+      },
+      {
+        name: 'Express',
+        badgeUrl:
+          'https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express&logoColor=white',
+      },
+      {
+        name: 'Prisma',
+        badgeUrl:
+          'https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white',
+      },
+      {
+        name: 'PHP',
+        badgeUrl:
+          'https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white',
+      },
+      {
+        name: 'Laravel',
+        badgeUrl:
+          'https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white',
+      },
+      {
+        name: 'Stripe',
+        badgeUrl:
+          'https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white',
+      },
     ],
   },
   {
     title: 'Databases',
     description: 'Relational, document, and backend-as-a-service storage.',
     skills: [
-      { name: 'PostgreSQL', icon: '/postgresql.webp' },
-      { name: 'MySQL', icon: '/mysql.avif' },
-      { name: 'MongoDB', icon: '/mongodb.svg' },
-      { name: 'Supabase', icon: '/supabase.webp' },
-      { name: 'Firebase', icon: '/firebase.webp' },
+      {
+        name: 'PostgreSQL',
+        badgeUrl:
+          'https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white',
+      },
+      {
+        name: 'MySQL',
+        badgeUrl:
+          'https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white',
+      },
+      {
+        name: 'MongoDB',
+        badgeUrl:
+          'https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white',
+      },
+      {
+        name: 'Redis',
+        badgeUrl:
+          'https://img.shields.io/badge/Redis-FF4438?style=for-the-badge&logo=redis&logoColor=white',
+      },
+      {
+        name: 'Supabase',
+        badgeUrl:
+          'https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white',
+      },
+      {
+        name: 'Firebase',
+        badgeUrl:
+          'https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white',
+      },
     ],
   },
   {
-    title: 'DevOps / Tools',
-    description: 'Version control, package managers, testing, and deploys.',
+    title: 'Testing',
+    description:
+      'Confidence through component, integration, and end-to-end tests.',
     skills: [
-      { name: 'Docker', icon: '/docker.webp'},
-      { name: 'Cypress', icon: '/cypress.webp' },
-      { name: 'Jest', icon: '/jest.webp' },
-      { name: 'Linux', icon: '/linux.webp' },
-      { name: 'pnpm', icon: '/pnpm.webp' },
+      {
+        name: 'Cypress',
+        badgeUrl:
+          'https://img.shields.io/badge/Cypress-69D3A7?style=for-the-badge&logo=cypress&logoColor=white',
+      },
+      {
+        name: 'Jest',
+        badgeUrl:
+          'https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white',
+      },
+      {
+        name: 'Testing Library',
+        badgeUrl:
+          'https://img.shields.io/badge/Testing_Library-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white',
+      },
+      {
+        name: 'Pest',
+        badgeUrl:
+          'https://img.shields.io/badge/Pest-000000?style=for-the-badge&logo=pestphp&logoColor=white',
+      },
+    ],
+  },
+  {
+    title: 'DevOps & Infrastructure',
+    description:
+      'Delivery, automation, source control, and production infrastructure.',
+    wide: true,
+    skills: [
+      {
+        name: 'Docker',
+        badgeUrl:
+          'https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white',
+      },
+      {
+        name: 'Git',
+        badgeUrl:
+          'https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white',
+      },
+      {
+        name: 'Linux',
+        badgeUrl:
+          'https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=000',
+      },
+      {
+        name: 'CircleCI',
+        badgeUrl:
+          'https://img.shields.io/badge/CircleCI-343434?style=for-the-badge&logo=circleci&logoColor=white',
+      },
+      {
+        name: 'Nginx',
+        badgeUrl:
+          'https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white',
+      },
     ],
   },
 ];
