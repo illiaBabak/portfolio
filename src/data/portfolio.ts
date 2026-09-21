@@ -20,7 +20,6 @@ export type SkillCategory = {
   title: string;
   description: string;
   skills: readonly Skill[];
-  wide?: boolean;
 };
 
 export type ProjectLink = {
@@ -63,14 +62,14 @@ export const navItems: readonly NavItem[] = [
 
 export const personalInfo = {
   name: 'Illia Babak',
-  title: 'Full-Stack & Mobile Developer',
+  title: 'Full-Stack Developer',
   email: 'illiababak776@gmail.com',
   phone: '+48 884 959 918',
   portrait: '/photo.jpg',
   shortIntro:
-    'Fullstack Developer with 2 years of commercial experience across React, TypeScript, React Query, React Native, PHP, and Node.js/Express.',
+    'Full-Stack Developer with over 3 years of commercial experience building web, mobile, and backend applications with React, TypeScript, React Native, PHP, and Node.js/Express.',
   about:
-    'I am a Fullstack Developer with a strong frontend background and commercial experience building web, mobile, and backend solutions. My work spans logistics, insurance, video services, internal tools, estimation platforms, and real-time communication products. I focus on scalable architecture, maintainable code, clear user workflows, and reliable delivery across product layers.',
+    'I build complete features, from user interfaces and APIs to business logic, integrations, and deployment. I have hands-on experience with production systems, microservices, Docker, Kubernetes, Terraform, and AWS. I focus on scalability, performance, code quality, and system reliability.',
   buildFocus:
     'I build responsive interfaces, mobile-ready product flows, API integrations, dashboards, internal tools, and backend services that support real business workflows.',
   learningFocus:
@@ -103,33 +102,6 @@ export const socialLinks: readonly SocialLink[] = [
 ];
 
 export const skillCategories: readonly SkillCategory[] = [
-  {
-    title: 'Styling',
-    description:
-      'Responsive, maintainable interfaces with polished visual detail.',
-    skills: [
-      {
-        name: 'Tailwind CSS',
-        badgeUrl:
-          'https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white',
-      },
-      {
-        name: 'Bootstrap',
-        badgeUrl:
-          'https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white',
-      },
-      {
-        name: 'Sass',
-        badgeUrl:
-          'https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white',
-      },
-      {
-        name: 'Less',
-        badgeUrl:
-          'https://img.shields.io/badge/Less-1D365D?style=for-the-badge&logo=less&logoColor=white',
-      },
-    ],
-  },
   {
     title: 'Frontend',
     description:
@@ -171,9 +143,84 @@ export const skillCategories: readonly SkillCategory[] = [
           'https://img.shields.io/badge/Babylon.js-BB464B?style=for-the-badge&logo=babylondotjs&logoColor=white',
       },
       {
-        name: 'Vite',
+        name: 'Tailwind CSS',
         badgeUrl:
-          'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white',
+          'https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white',
+      },
+    ],
+  },
+
+  {
+    title: 'Backend',
+    description: 'APIs, server logic and application foundations.',
+    skills: [
+      {
+        name: 'PHP',
+        badgeUrl:
+          'https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white',
+      },
+      {
+        name: 'Laravel',
+        badgeUrl:
+          'https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white',
+      },
+      {
+        name: 'Node.js',
+        badgeUrl:
+          'https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white',
+      },
+      {
+        name: 'Express',
+        badgeUrl:
+          'https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express&logoColor=white',
+      },
+      {
+        name: 'Prisma',
+        badgeUrl:
+          'https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white',
+      },
+    ],
+  },
+  {
+    title: 'DevOps & Infrastructure',
+    description:
+      'Delivery, automation, source control, and production infrastructure.',
+    skills: [
+      {
+        name: 'AWS',
+        badgeUrl:
+          'https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white',
+      },
+      {
+        name: 'Kubernetes',
+        badgeUrl:
+          'https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white',
+      },
+      {
+        name: 'Terraform',
+        badgeUrl:
+          'https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white',
+      },
+      {
+        name: 'Docker',
+        badgeUrl:
+          'https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white',
+      },
+
+      {
+        name: 'Linux',
+        badgeUrl:
+          'https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=000',
+      },
+      {
+        name: 'CircleCI',
+        badgeUrl:
+          'https://img.shields.io/badge/CircleCI-343434?style=for-the-badge&logo=circleci&logoColor=white',
+      },
+      {
+        name: 'Nginx',
+        badgeUrl:
+          'https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white',
       },
     ],
   },
@@ -193,42 +240,7 @@ export const skillCategories: readonly SkillCategory[] = [
       },
     ],
   },
-  {
-    title: 'Backend',
-    description: 'APIs, server logic, payments, and application foundations.',
-    skills: [
-      {
-        name: 'Node.js',
-        badgeUrl:
-          'https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white',
-      },
-      {
-        name: 'Express',
-        badgeUrl:
-          'https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express&logoColor=white',
-      },
-      {
-        name: 'Prisma',
-        badgeUrl:
-          'https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white',
-      },
-      {
-        name: 'PHP',
-        badgeUrl:
-          'https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white',
-      },
-      {
-        name: 'Laravel',
-        badgeUrl:
-          'https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white',
-      },
-      {
-        name: 'Stripe',
-        badgeUrl:
-          'https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white',
-      },
-    ],
-  },
+
   {
     title: 'Databases',
     description: 'Relational, document, and backend-as-a-service storage.',
@@ -265,6 +277,7 @@ export const skillCategories: readonly SkillCategory[] = [
       },
     ],
   },
+
   {
     title: 'Testing',
     description:
@@ -289,39 +302,6 @@ export const skillCategories: readonly SkillCategory[] = [
         name: 'Pest',
         badgeUrl:
           'https://img.shields.io/badge/Pest-000000?style=for-the-badge&logo=pestphp&logoColor=white',
-      },
-    ],
-  },
-  {
-    title: 'DevOps & Infrastructure',
-    description:
-      'Delivery, automation, source control, and production infrastructure.',
-    wide: true,
-    skills: [
-      {
-        name: 'Docker',
-        badgeUrl:
-          'https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white',
-      },
-      {
-        name: 'Git',
-        badgeUrl:
-          'https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white',
-      },
-      {
-        name: 'Linux',
-        badgeUrl:
-          'https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=000',
-      },
-      {
-        name: 'CircleCI',
-        badgeUrl:
-          'https://img.shields.io/badge/CircleCI-343434?style=for-the-badge&logo=circleci&logoColor=white',
-      },
-      {
-        name: 'Nginx',
-        badgeUrl:
-          'https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white',
       },
     ],
   },
@@ -404,17 +384,21 @@ export const experienceEntries: readonly Experience[] = [
     company: 'Novage',
     role: 'Fullstack Developer',
     employmentType: 'Commercial',
-    location: 'Zhytomyr, Ukraine / Remote',
-    dateRange: 'May 2024 - May 2026',
+    location: 'Zhytomyr, Ukraine',
+    dateRange: 'May 2023 - May 2026',
     description:
-      'Worked on web, mobile, and backend applications across logistics, insurance, and video services domains, contributing to production features, integrations, performance improvements, and support.',
+      'Built and supported web applications and backend services for transportation estimates, real-time video communication, and production workflows.',
     achievements: [
-      'Developed React, TypeScript, and React Query features for interactive interfaces, employee dashboards, internal tools, and user workflows.',
-      'Contributed to a moving and transportation estimation platform that calculates relocation costs from item data, route distance, stops, packaging requirements, value, and transport type.',
-      'Built modules for item-based estimation, route-related calculations, and data exchange with external systems.',
-      'Integrated APIs and contributed to backend services using PHP and Node.js/Express microservices.',
-      'Worked on a real-time video communication platform connecting operators with customers and supporting media-based transportation data collection.',
-      'Contributed to AI-assisted object recognition flows, PDF and Excel export services, stability improvements, and on-call production issue resolution.',
+      'Developed React, TypeScript, and React Query interfaces, employee dashboards, internal tools, and workflows integrated with data from multiple services.',
+      'Co-developed a moving and transportation cost estimation platform using item weight, volume, value, packing requirements, route parameters, and other operational data.',
+      'Built PHP and Node.js/Express services with business logic, APIs, validation, data processing, external integrations, and communication between microservices.',
+      'Developed calculation, item management, and quotation modules connected to the main application and external systems.',
+      'Worked on a real-time video platform that let operators gather information from customers for accurate transportation estimates.',
+      'Co-developed image and video processing that turned call recordings into structured item inventories.',
+      'Integrated an AI object recognition service and used its results to estimate item type, quantity, weight, value, and packaging requirements.',
+      'Developed PDF and Excel exports for quotations, transportation data, and automatically prepared item inventories.',
+      'Participated in service deployment with Docker and Kubernetes, and worked with Terraform and AWS infrastructure.',
+      'Supported production applications through log analysis, incident response, and on-call diagnosis of backend, integration, and service communication issues.',
     ],
     stack: [
       'React',
@@ -426,6 +410,10 @@ export const experienceEntries: readonly Experience[] = [
       'Express',
       'PDF/Excel',
       'AI integrations',
+      'Docker',
+      'Kubernetes',
+      'Terraform',
+      'AWS',
     ],
     logoText: 'NV',
   },
@@ -433,14 +421,14 @@ export const experienceEntries: readonly Experience[] = [
     company: 'Freelancehunt',
     role: 'Frontend Developer',
     employmentType: 'Freelance',
-    location: 'Ukraine / Remote',
-    dateRange: 'Jan 2024 - May 2024',
+    location: 'Ukraine',
+    dateRange: 'Jan 2023 - May 2023',
     description:
-      'Delivered responsive and dynamic web applications for freelance clients, turning design files into polished React interfaces with attention to performance and user experience.',
+      'Developed responsive and dynamic React and TypeScript applications for freelance clients.',
     achievements: [
-      'Developed responsive React and TypeScript applications from Figma, Adobe XD, and Sketch designs.',
-      'Converted UI designs into pixel-perfect, interactive pages with reusable components and clean styling.',
-      'Improved frontend performance with code splitting, lazy loading, memoization, and careful rendering decisions.',
+      'Developed responsive and dynamic web applications using React and TypeScript.',
+      'Optimized performance with code splitting, lazy loading, and memoization.',
+      'Translated Figma, Adobe XD, and Sketch designs into pixel-perfect, interactive React applications.',
     ],
     stack: ['React', 'TypeScript', 'JavaScript', 'Performance', 'Figma'],
     logoText: 'FH',

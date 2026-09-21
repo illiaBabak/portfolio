@@ -13,7 +13,7 @@ export const Experience = (): JSX.Element => {
         <SectionHeading
           eyebrow='Professional journey'
           title='Commercial experience across product domains'
-          description='Production work across logistics, insurance, video services, freelance client projects, internal tools, integrations, and performance-focused frontend delivery.'
+          description='Production work on transportation estimates, real-time video services, internal tools, integrations, and frontend delivery for freelance clients.'
         />
 
         <div className='relative mt-14 lg:pl-10'>

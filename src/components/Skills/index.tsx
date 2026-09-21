@@ -16,27 +16,33 @@ export const Skills = (): JSX.Element => {
           description='A README-style overview of the technologies I use to build, test, and ship products.'
         />
 
-        <div className='mt-14 grid gap-5 md:grid-cols-2'>
+        <div className='mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-12 lg:gap-5'>
           {skillCategories.map((category, index) => (
             <article
-              className={`reveal-up group relative overflow-hidden rounded-2xl border border-slate-900/10 bg-white/85 p-6 shadow-lg shadow-slate-950/5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-violet-400/40 hover:shadow-xl hover:shadow-violet-950/10 ${
-                category.wide ? 'md:col-span-2' : ''
+              className={`reveal-up group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_12px_36px_-24px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-[0_20px_45px_-24px_rgba(91,33,182,0.3)] sm:p-7 ${
+                index === 0
+                  ? 'lg:col-span-7'
+                  : index === 1
+                    ? 'lg:col-span-5'
+                    : 'lg:col-span-6'
               }`}
               style={{ animationDelay: `${index * 80}ms` }}
               key={category.title}
             >
-              <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/55 to-transparent opacity-0 transition duration-300 group-hover:opacity-100' />
+              <div className='pointer-events-none absolute -top-24 -right-20 h-48 w-48 rounded-full bg-violet-100/60 blur-3xl' />
 
-              <div>
-                <h3 className='text-xl font-black text-slate-950 sm:text-2xl'>
-                  {category.title}
-                </h3>
-                <p className='mt-1 max-w-xl text-sm leading-6 text-slate-600'>
-                  {category.description}
-                </p>
+              <div className='relative'>
+                <div>
+                  <h3 className='text-xl font-bold tracking-tight text-slate-950 sm:text-2xl'>
+                    {category.title}
+                  </h3>
+                  <p className='mt-2 max-w-xl text-sm leading-6 text-slate-600'>
+                    {category.description}
+                  </p>
+                </div>
               </div>
 
-              <ul className='mt-6 flex list-none flex-wrap gap-2.5 p-0'>
+              <ul className='relative mt-6 flex flex-wrap content-start gap-2.5 border-t border-slate-100 pt-5'>
                 {category.skills.map((skill) => (
                   <li key={`${category.title}-${skill.name}`}>
                     <TechBadge
