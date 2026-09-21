@@ -184,7 +184,7 @@ export const skillCategories: readonly SkillCategory[] = [
   {
     title: 'DevOps & Infrastructure',
     description:
-      'Delivery, automation, source control and production infrastructure.',
+      'Delivery, automation, source control, and production infrastructure.',
     skills: [
       {
         name: 'AWS',
